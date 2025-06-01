@@ -2,7 +2,6 @@ import { useState } from 'react'
 import '../App.css'
 
 function Lessons({ setPageCount , setScoreCount}) {
-    const [count, setCount] = useState(0)
     const [QuestionCount, setQuestionCount] = useState(0)
     const [Answer, setAnswer] = useState(0);
     const [StreakCount, setStreakCount] = useState(0)
@@ -68,14 +67,12 @@ function Lessons({ setPageCount , setScoreCount}) {
                 <div className='QuestionHolder'>
                     <div className='QuestionHeader'>{Headers[QuestionCount]}</div>
                     <div className='QuestionOptions'>
-                        <ul>
                             {options[QuestionCount].colum.map((opt, i) => (
-                                <button onClick={() => setAnswer(i)} key={i}>{opt}</button>
+                                <button className='OptionstoAnswer' onClick={() => setAnswer(i)} key={i}>{opt}</button>
                             ))}
-                        </ul>
                     </div>
                     <div>
-                        <button onClick={() => ConfirmAnswer(QuestionCount, Answer)}>hello</button>
+                        <button className='ConfirmButton' onClick={() => ConfirmAnswer(QuestionCount, Answer)}>confirmar</button>
                     </div>
                 </div>
             </div>
